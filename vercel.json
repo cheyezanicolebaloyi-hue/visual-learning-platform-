@@ -1,0 +1,23 @@
+{
+  "buildCommand": "cd frontend && next build",
+  "devCommand": "cd frontend && next dev",
+  "outputDirectory": "frontend/.next",
+  "framework": "nextjs",
+  "nodeVersion": "18.x",
+  "env": {
+    "NEXT_PUBLIC_API_URL": "@api_url",
+    "NEXT_PUBLIC_APP_NAME": "Visual Learning Platform"
+  },
+  "git": {
+    "deploymentEnabled": {
+      "main": true,
+      "deployment-setup": true
+    }
+  },
+  "redirects": [
+    {
+      "source": "/api/:path*",
+      "destination": "$NEXT_PUBLIC_API_URL/api/:path*"
+    }
+  ]
+}
